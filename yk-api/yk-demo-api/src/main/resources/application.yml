@@ -1,0 +1,5 @@
+server:
+  port: 9201
+   
+logging:
+  path: /yk/logs/yk_cloud/api/
