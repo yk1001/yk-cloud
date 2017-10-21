@@ -21,6 +21,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<docker.image.prefix>ykcloud</docker.image.prefix>
 	</properties>
 
 	<modules>
