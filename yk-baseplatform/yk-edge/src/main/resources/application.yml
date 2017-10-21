@@ -1,0 +1,38 @@
+server:
+  port: 9002
+  http:
+    multipart:
+      max-file-size: 200Mb
+      max-request-size: 2500Mb
+      
+logging:
+  path: /yk/logs/yk_cloud/baseplatform/
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
+                           
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.105:9001/eureka/
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+zuul:
+  sensitive-headers: '' #Distribute headers cookies to children
+  add-proxy-headers: true
+  add-host-header: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+    demoapi:
+      path: /demoapi/**
+      serviceId: demo-api

@@ -18,5 +18,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>yk-discovery</module>
+    <module>yk-edge</module>
   </modules>
 </project>
