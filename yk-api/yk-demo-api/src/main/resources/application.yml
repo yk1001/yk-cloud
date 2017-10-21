@@ -3,3 +3,12 @@ server:
    
 logging:
   path: /yk/logs/yk_cloud/api/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.105:9001/eureka/
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
