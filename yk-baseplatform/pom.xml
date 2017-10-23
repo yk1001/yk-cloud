@@ -19,5 +19,6 @@
   <modules>
     <module>yk-discovery</module>
     <module>yk-edge</module>
+    <module>yk-config</module>
   </modules>
 </project>
