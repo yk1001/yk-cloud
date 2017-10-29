@@ -20,5 +20,6 @@
     <module>yk-discovery</module>
     <module>yk-edge</module>
     <module>yk-config</module>
+    <module>yk-auth</module>
   </modules>
 </project>
