@@ -1,4 +1,4 @@
-package org.yk.demo.api.controller;
+package org.yk.demo.mgmt.controller;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

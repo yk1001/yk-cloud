@@ -14,4 +14,12 @@
   <modules>
     <module>yk-demo-mgmt</module>
   </modules>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.yk.cloud</groupId>
+		<artifactId>yk-common-util</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

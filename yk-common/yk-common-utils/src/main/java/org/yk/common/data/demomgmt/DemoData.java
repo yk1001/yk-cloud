@@ -1,4 +1,4 @@
-package org.yk.demo.api.data;
+package org.yk.common.data.demomgmt;
 
 import java.io.Serializable;
 
