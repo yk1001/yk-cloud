@@ -1,0 +1,27 @@
+server:
+  port: 9101
+   
+logging:
+  path: /yk/logs/yk_cloud/api/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.105:9001/eureka/
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+security:
+  basic:
+    enabled: false
+  ignored: /noauth/**, /swagger**
+  oauth2:
+    client:
+      client-id: yk
+      client-secret: secret
+      access-token-uri: http://192.168.0.105:9004/uaa/oauth/token
+      grant-type: client_credentials
+    resource:
+      token-info-uri: http://192.168.0.105:9004/uaa/oauth/check_token
