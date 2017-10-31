@@ -4,21 +4,3 @@ server:
   
 logging:
   path: /yk/logs/yk_cloud/baseplatform/
-  
-spring:
-  jpa:
-    show-sql: false
-    database: MYSQL
-    hibernate:
-      ddl-auto: update
-      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/yk_oauth?useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
-    testWhileIdle: true
-    validationQuery: SELECT 1
