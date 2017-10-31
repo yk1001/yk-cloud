@@ -1,5 +1,5 @@
 server:
-  port: 9201
+  port: 9202
    
 logging:
   path: /yk/logs/yk_cloud/api/
@@ -12,3 +12,16 @@ eureka:
     preferIpAddress: true
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
+
+security:
+  basic:
+    enabled: false
+  ignored: /noauth/**, /swagger**
+  oauth2:
+    client:
+      client-id: yk
+      client-secret: secret
+      access-token-uri: http://192.168.0.105:9004/uaa/oauth/token
+      grant-type: client_credentials
+    resource:
+      token-info-uri: http://192.168.0.105:9004/uaa/oauth/check_token

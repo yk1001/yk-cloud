@@ -24,7 +24,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         clients.inMemory()
                 .withClient("yk")
                 .secret("secret")
-                .authorizedGrantTypes("password","refresh_token")
+                .authorizedGrantTypes("password","refresh_token","client_credentials")
                 .scopes("read","write","trust")
 //                .authorities("ROLE_CLIENT","ROLE_TRUSTED_CLIENT")
 //                .accessTokenValiditySeconds(300)
@@ -45,6 +45,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     
     @Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security
+                .tokenKeyAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()")
+        ;
     	security.allowFormAuthenticationForClients();
 	}
 }
