@@ -37,29 +37,4 @@ public class DemoConroller {
 		return demoMgmtClient.test2(demoData);
 	}
 	
-	@RequestMapping(value="/noauth/download",method = RequestMethod.GET)
-	@ApiOperation(value = "服务器文件下载", notes = "服务器文件下载")
-	public void download(@RequestAttribute Download download,HttpServletResponse resp){
-		try {
-			String filename = download.getPath();
-			resp.setHeader("Content-Disposition", "attachment;filename="+filename);  
-	        //System.out.println(fullFileName);  
-	        //读取文件  
-	        InputStream in = new FileInputStream(filename);  
-	        OutputStream out = resp.getOutputStream();  
-	        
-	        int b;  
-	        while((b=in.read())!= -1)  
-	        {  
-	            out.write(b);  
-	        }  
-	          
-	        in.close();  
-	        out.close();  
-	        
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
 }
