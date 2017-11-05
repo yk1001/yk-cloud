@@ -1,19 +1,19 @@
 package org.yk.demo.api.controller;
 
-ß
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-ß
-import javax.servlet.ServletOutputStream;
+
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.yk.common.data.demoapi.Download;
 import org.yk.common.data.demomgmt.DemoData;
 import org.yk.demo.api.client.DemoMgmtClient;
 
@@ -61,4 +61,5 @@ public class DemoConroller {
 			e.printStackTrace();
 		}
 	}
+	
 }
