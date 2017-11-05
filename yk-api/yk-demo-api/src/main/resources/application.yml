@@ -1,5 +1,5 @@
 server:
-  port: 9201
+  port: 9202
    
 logging:
   path: /yk/logs/yk_cloud/api/
@@ -13,6 +13,16 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
 
+feign:
+  httpclient:
+    enabled: true
+
+ribbon:
+  ConnectTimeout: 600000
+  ReadTimeout: 600000
+  eureka:
+    enabled: true
+      
 security:
   basic:
     enabled: false

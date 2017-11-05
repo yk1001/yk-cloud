@@ -18,5 +18,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>yk-common-utils</module>
+    <module>yk-common-security</module>
   </modules>
 </project>
