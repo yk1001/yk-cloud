@@ -8,8 +8,8 @@ import org.yk.common.data.demomgmt.DemoData;
 
 import io.swagger.annotations.ApiOperation;
 
-//@FeignClient(name="demo-mgmt")
-@FeignClient(name="demo-mgmt",url="http://127.0.0.1:9101")
+@FeignClient(name="demo-mgmt")
+//@FeignClient(name="demo-mgmt",url="http://127.0.0.1:9101")
 public interface DemoMgmtClient {
 
 	@RequestMapping(value="/noauth/demoData",method = RequestMethod.POST)
