@@ -21,5 +21,10 @@
 		<artifactId>yk-common-util</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+			<groupId>com.yk.cloud</groupId>
+			<artifactId>yk-common-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
 </project>

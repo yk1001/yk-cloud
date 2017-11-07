@@ -1,0 +1,6 @@
+spring:
+  profiles: default
+  application:
+    name: sleuth
+encrypt:
+  failOnError: false
