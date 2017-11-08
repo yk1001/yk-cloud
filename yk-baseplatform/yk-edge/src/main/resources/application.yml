@@ -15,7 +15,14 @@ hystrix:
                 isolation:
                     thread:
                         timeoutInMilliseconds: 60000
-                           
+
+spring:
+  zipkin:
+    base-url: http://192.168.0.105:9005
+  sleuth:
+    sampler:
+      percentage: 1.0
+                          
 eureka:
   client:
     serviceUrl:

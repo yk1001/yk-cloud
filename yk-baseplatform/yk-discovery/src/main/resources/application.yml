@@ -10,7 +10,14 @@ endpoints:
     enabled: true
   health:
     sensitive: true
-    
+
+spring:
+  zipkin:
+    base-url: http://192.168.0.105:9005
+  sleuth:
+    sampler:
+      percentage: 1.0
+          
 eureka:
   instance:
     preferIpAddress: true
