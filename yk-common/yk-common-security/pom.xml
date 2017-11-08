@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>com.yk.cloud</groupId>
 			<artifactId>yk-common-util</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${yk.common.util.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

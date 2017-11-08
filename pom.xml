@@ -22,14 +22,16 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.prefix>ykcloud</docker.image.prefix>
+		<yk.common.util.version>0.0.1-SNAPSHOT</yk.common.util.version>
+		<yk.common.security.version>0.0.1-SNAPSHOT</yk.common.security.version>
 	</properties>
 
 	<modules>
 		<module>yk-common</module>
 		<module>yk-baseplatform</module>
 		<module>yk-api</module>
-    <module>yk-core</module>
-  </modules>
+    	<module>yk-core</module>
+  	</modules>
 
 	<dependencies>
 		<dependency>
