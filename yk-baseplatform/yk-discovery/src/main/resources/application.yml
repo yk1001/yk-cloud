@@ -3,13 +3,6 @@ server:
    
 logging:
   path: /yk/logs/yk_cloud/baseplatform/
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: true
 
 spring:
   zipkin:
@@ -21,12 +14,8 @@ spring:
 eureka:
   instance:
     preferIpAddress: true
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30
   client:
     registerWithEureka: false
     fetchRegistry: false
   server:
-    waitTimeInMsWhenSyncEmpty: 0
     enable-self-preservation: false
-    eviction-interval-timer-in-ms: 4000
