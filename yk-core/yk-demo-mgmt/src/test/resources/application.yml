@@ -1,0 +1,4 @@
+server:
+  port: 9201
+logging:
+  path: /yk/logs/gemii_micro/api/
