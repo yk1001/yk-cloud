@@ -1,4 +1,4 @@
-package org.yk.common.utils;
+package org.yk.common.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
 import org.apache.poi.hssf.usermodel.HSSFPatriarch;
@@ -28,6 +27,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 
 @SuppressWarnings("rawtypes")
@@ -158,7 +158,7 @@ public class ExcelUtil {
 	            break;
 	        case Cell.CELL_TYPE_STRING: //字符串
 	            cellValue = String.valueOf(cell.getStringCellValue());
-	            if(StringUtils.isNotBlank(cellValue)){
+	            if(!StringUtils.isEmpty(cellValue)){
 	            	cellValue=cellValue.trim();
 	            }
 	            break;

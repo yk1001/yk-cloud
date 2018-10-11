@@ -1,14 +1,11 @@
 package org.yk.common.security.compoment;
 
-import feign.RequestInterceptor;
-import feign.RequestTemplate;
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
-import org.springframework.util.Assert;
+
+import feign.RequestInterceptor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
@@ -23,9 +20,8 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
      */
     private static final String BEARER_TOKEN_TYPE = "Bearer ";
 
-    @Override
-    public void apply(RequestTemplate template) {
-        try {
+	public void apply(feign.RequestTemplate template) {
+		try {
             if (template.headers().containsKey(AUTHORIZATION_HEADER)) {
                 log.warn("The Authorization token has been already set.");
                 return;
@@ -43,6 +39,7 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
         } catch(Exception ex){
             log.info("Exception occurred while set the OAuth2 token: {}", ex.getMessage());
         }
-    }
+		
+	}
 
 }

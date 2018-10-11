@@ -13,6 +13,14 @@
   <name>Archetype - yk-demo-mgmt</name>
   <url>http://maven.apache.org</url>
   
+  <dependencies>
+		<dependency>
+			<groupId>com.yk.cloud</groupId>
+			<artifactId>yk-common-security</artifactId>
+			<version>${yk.common.util.version}</version>
+		</dependency>
+	</dependencies>
+	
   <build>
 		<plugins>
 			<plugin>

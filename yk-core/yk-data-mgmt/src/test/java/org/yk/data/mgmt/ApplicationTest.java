@@ -1,11 +1,15 @@
-package org.yk.demo.api;
+package org.yk.data.mgmt;
 
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * ClassName: Application <br/>
@@ -18,14 +22,13 @@ import org.springframework.context.annotation.FilterType;
  * @since JDK 1.8
  */
 
+
 @SpringBootApplication
-@EnableFeignClients(basePackages = {"org.yk.demo.api.clients"})
-@ComponentScan(basePackages={"org.yk.demo"},excludeFilters={@Filter(type=FilterType.ANNOTATION,value=SpringBootApplication.class)})
+@ComponentScan(excludeFilters = {
+		@Filter(type = FilterType.ANNOTATION, value = SpringBootApplication.class) })
 public class ApplicationTest {
 
-	
 	public static void main(String[] args) {
 		SpringApplication.run(ApplicationTest.class, args);
 	}
-	
 }

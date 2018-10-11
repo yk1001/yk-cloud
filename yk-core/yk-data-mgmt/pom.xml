@@ -5,22 +5,26 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.yk.cloud</groupId>
-		<artifactId>yk-baseplatform</artifactId>
+		<artifactId>yk-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-discovery</artifactId>
+	<artifactId>yk-data-mgmt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>yk-discovery</name>
+	<name>yk-data-mgmt</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-			<version>1.4.5.RELEASE</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-elasticsearch</artifactId>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

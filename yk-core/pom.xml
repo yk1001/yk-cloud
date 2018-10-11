@@ -14,6 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
 		<module>yk-demo-mgmt</module>
+		<module>yk-data-mgmt</module>
 	</modules>
 
 	<dependencies>
@@ -21,11 +22,6 @@
 			<groupId>com.yk.cloud</groupId>
 			<artifactId>yk-common-util</artifactId>
 			<version>${yk.common.util.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.yk.cloud</groupId>
-			<artifactId>yk-common-security</artifactId>
-			<version>${yk.common.security.version}</version>
 		</dependency>
 	</dependencies>
 </project>
