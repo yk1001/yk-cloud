@@ -29,5 +29,5 @@ public class PageInfo implements Serializable {
 	/**
 	 * Optional. totalRecords: total records of the entities.
 	 */
-	private Integer totalRecords;
+	private Long totalRecords;
 }
