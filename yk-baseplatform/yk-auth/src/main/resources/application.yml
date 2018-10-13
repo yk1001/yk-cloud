@@ -4,14 +4,11 @@ server:
   
 logging:
   path: /yk/logs/yk_cloud/baseplatform/
-
-spring:
-  zipkin:
-    base-url: http://192.168.0.105:9005
-  sleuth:
-    sampler:
-      percentage: 1.0
-        
+  
+security:
+  basic:
+    enabled: false
+    
 eureka:
   client:
     serviceUrl:

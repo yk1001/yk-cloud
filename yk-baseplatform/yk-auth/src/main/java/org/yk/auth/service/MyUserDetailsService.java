@@ -13,11 +13,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyUserDetailsService implements UserDetailsService{
 
+	private final static String PASSWORD_DEFAULT = "$2a$10$tuH.C7kuP9/zoVgVd4B1jebLtIhN8grXJdJdpV/Owosw0Cz46bvDu";
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
 		List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
-		UserDetails userDetails = new User(username, "12345", authorities);
+		UserDetails userDetails = new User(username, PASSWORD_DEFAULT, authorities);
 		return userDetails;
 	}
 
