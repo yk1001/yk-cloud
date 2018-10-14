@@ -29,4 +29,5 @@ zuul:
   # 关闭默认路由
   ignored-services: '*'
   routes:
-    demo-api: /demoapi/**
+    auth: /auth/**
+    demo-api: /demo-api/**
