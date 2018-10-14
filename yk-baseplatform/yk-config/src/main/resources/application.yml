@@ -10,8 +10,6 @@ eureka:
       defaultZone: http://${YK_DISCOVERY_SRV1_SERVICE_HOST}:${YK_DISCOVERY_SRV1_SERVICE_PORT}/eureka
   instance:
     preferIpAddress: true
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30
     
 spring:
   cloud:

@@ -7,21 +7,6 @@ server:
       
 logging:
   path: /yk/logs/yk_cloud/baseplatform/
-
-hystrix:
-    command:
-        default:
-            execution:
-                isolation:
-                    thread:
-                        timeoutInMilliseconds: 60000
-
-spring:
-  zipkin:
-    base-url: http://192.168.0.105:9005
-  sleuth:
-    sampler:
-      percentage: 1.0
                           
 eureka:
   client:
@@ -29,17 +14,19 @@ eureka:
       defaultZone: http://${YK_DISCOVERY_SRV1_SERVICE_HOST}:${YK_DISCOVERY_SRV1_SERVICE_PORT}/eureka
   instance:
     preferIpAddress: true
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30
 
 zuul:
-  sensitive-headers: '' #Distribute headers cookies to children
+  # 关闭全局重试机制
+  retryable: false
+  ignored-headers: Access-Control-Allow-Credentials,Access-Control-Allow-Origin,Access-Control-Allow-Methods
+  sensitive-headers: Cookie,Set-Cookie
   add-proxy-headers: true
   add-host-header: true
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
+  prefix: /ykcloud/api
+  # 关闭默认路由
+  ignored-services: *
   routes:
-    demoapi:
-      path: /demoapi/**
-      serviceId: demo-api
+    demo-api: /demoapi/**
