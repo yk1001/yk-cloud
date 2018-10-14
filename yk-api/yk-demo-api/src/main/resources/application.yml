@@ -33,7 +33,7 @@ hystrix:
 security:
   basic:
     enabled: false
-  ignored: /noauth/**, /swagger**
+  ignored: /**/noauth/**,/**/swagger**
   oauth2:
     client:
       client-id: yk
