@@ -1,9 +1,9 @@
 server:
   port: 9201
-   
+
 logging:
   path: /yk/logs/yk_cloud/api/
-      
+
 eureka:
   client:
     serviceUrl:
@@ -29,11 +29,11 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
           strategy: SEMAPHORE
-                
+
 security:
+  ignored: /noauth/**,/swagger**
   basic:
     enabled: false
-  ignored: /**/noauth/**,/**/swagger**
   oauth2:
     client:
       client-id: yk
