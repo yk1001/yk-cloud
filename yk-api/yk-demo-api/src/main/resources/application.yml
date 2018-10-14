@@ -3,20 +3,11 @@ server:
    
 logging:
   path: /yk/logs/yk_cloud/api/
-
-spring:
-  zipkin:
-    base-url: http://192.168.0.105:9005
-  sleuth:
-    sampler:
-      percentage: 1.0
       
 eureka:
   client:
     serviceUrl:
       defaultZone: http://${YK_DISCOVERY_SERVICE_HOST}:${YK_DISCOVERY_SERVICE_PORT}/eureka
-    healthcheck:
-      enabled: true
     instance:
       preferIpAddress: true
 
