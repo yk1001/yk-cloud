@@ -8,10 +8,9 @@
 		<artifactId>yk-common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.yk.cloud</groupId>
 	<artifactId>yk-common-security</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>yk-common-security</name>
+	<version>${yk.common.security.version}</version>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
