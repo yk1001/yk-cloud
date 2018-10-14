@@ -1,14 +1,10 @@
 server:
   port: 9004
-  context-path: /uaa
-  
+  servlet:
+    context-path: /uaa
 logging:
   path: /yk/logs/yk_cloud/baseplatform/
   
-security:
-  basic:
-    enabled: false
-    
 eureka:
   client:
     serviceUrl:
