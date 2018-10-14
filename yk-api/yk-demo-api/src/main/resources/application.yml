@@ -47,7 +47,7 @@ security:
     client:
       client-id: yk
       client-secret: secret
-      access-token-uri: http://192.168.0.105:9004/uaa/oauth/token
+      access-token-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/token
       grant-type: client_credentials
     resource:
-      token-info-uri: http://192.168.0.105:9004/uaa/oauth/check_token
+      token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token
