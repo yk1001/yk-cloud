@@ -1,2 +1,2 @@
 # yk-cloud
-yk spring learn project
+this project for learning spring cloud
