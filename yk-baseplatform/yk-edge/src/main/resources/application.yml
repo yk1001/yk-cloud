@@ -26,6 +26,7 @@ security:
       token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token
   
 zuul:
+  # 默认信号量大小 100 按需加大信号量
   semaphore:
     max-semaphores: 1000
   # 关闭全局重试机制
