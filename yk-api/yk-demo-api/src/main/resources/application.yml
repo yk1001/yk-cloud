@@ -31,9 +31,6 @@ hystrix:
           strategy: SEMAPHORE
 
 security:
-  ignored: /noauth/**,/swagger**
-  basic:
-    enabled: false
   oauth2:
     client:
       client-id: yk
