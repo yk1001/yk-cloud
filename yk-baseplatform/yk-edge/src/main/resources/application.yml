@@ -24,8 +24,10 @@ security:
       grant-type: client_credentials
     resource:
       token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token
-
+  
 zuul:
+  semaphore:
+    max-semaphores: 1000
   # 关闭全局重试机制
   retryable: false
   ignored-headers: Access-Control-Allow-Credentials,Access-Control-Allow-Origin,Access-Control-Allow-Methods
