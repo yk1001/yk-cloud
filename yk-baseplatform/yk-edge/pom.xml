@@ -20,6 +20,11 @@
 			<artifactId>spring-cloud-starter-zuul</artifactId>
 			<version>1.4.5.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.yk.cloud</groupId>
+			<artifactId>yk-common-security</artifactId>
+			<version>${yk.common.security.version}</version>
+		</dependency>
 	</dependencies>
 	
 	<build>

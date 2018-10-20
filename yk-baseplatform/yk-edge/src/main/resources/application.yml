@@ -15,6 +15,16 @@ eureka:
   instance:
     preferIpAddress: true
 
+security:
+  oauth2:
+    client:
+      client-id: yk
+      client-secret: secret
+      access-token-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/token
+      grant-type: client_credentials
+    resource:
+      token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token
+
 zuul:
   # 关闭全局重试机制
   retryable: false
