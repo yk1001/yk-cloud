@@ -5,14 +5,14 @@ logging:
   path: /yk/logs/yk_cloud/api/
 
 management:
-  security:
-    enabled: false
-endpoints:
-  metrics:
-    enabled: true
-  shutdown:
-    enabled: true
-    
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  
 eureka:
   client:
     serviceUrl:
