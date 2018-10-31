@@ -4,6 +4,10 @@ server:
 logging:
   path: /yk/logs/yk_cloud/api/
 
+management:
+  security:
+    enabled: false
+    
 eureka:
   client:
     serviceUrl:
@@ -37,7 +41,6 @@ security:
     client:
       client-id: yk
       client-secret: secret
-      access-token-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/token
       grant-type: client_credentials
     resource:
       token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token
