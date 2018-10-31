@@ -12,6 +12,7 @@ eureka:
     preferIpAddress: true
     
 spring:
+  profiles: dev
   cloud:
     config:
       server:
