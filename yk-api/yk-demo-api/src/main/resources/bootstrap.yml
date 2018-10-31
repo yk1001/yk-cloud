@@ -3,3 +3,14 @@ spring:
     name: demo-api
 encrypt:
   failOnError: false
+  
+---
+spring:
+  profiles: dev
+  application:
+    name: demo-api
+  cloud:
+    config:
+      uri: http://${YK_CONFIG_SERVICE_HOST}:${YK_CONFIG_SERVICE_PORT}
+encrypt:
+  failOnError: false
