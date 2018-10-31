@@ -12,10 +12,8 @@ eureka:
     preferIpAddress: true
     
 spring:
-  profiles: dev
   cloud:
     config:
       server:
         git:
           uri: https://github.com/yk1001/yk-config.git
-          search-paths: yk-config
