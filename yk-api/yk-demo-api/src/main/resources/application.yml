@@ -7,6 +7,11 @@ logging:
 management:
   security:
     enabled: false
+endpoints:
+  metrics:
+    enabled: true
+  shutdown:
+    enabled: true
     
 eureka:
   client:
