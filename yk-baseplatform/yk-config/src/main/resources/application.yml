@@ -17,3 +17,4 @@ spring:
       server:
         git:
           uri: https://github.com/yk1001/yk-config.git
+          search-paths: yk-config
