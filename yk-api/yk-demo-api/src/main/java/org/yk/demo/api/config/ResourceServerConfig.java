@@ -13,7 +13,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
         	.antMatchers("/authsec/**").authenticated()
-        	.antMatchers("/noauth/**","/swagger**").permitAll();
+        	.antMatchers("/noauth/**","/swagger**").permitAll()
+        	.and().httpBasic().disable();
     }
     
 }
