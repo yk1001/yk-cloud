@@ -8,7 +8,7 @@ encrypt:
 spring:
   profiles: dev
   application:
-    name: demo-api
+    name: edge
   cloud:
     config:
       uri: http://${YK_CONFIG_SERVICE_HOST}:${YK_CONFIG_SERVICE_PORT}
