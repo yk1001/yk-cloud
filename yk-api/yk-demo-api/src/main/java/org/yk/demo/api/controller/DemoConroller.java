@@ -27,6 +27,11 @@ public class DemoConroller {
 	public GeneralContentResult<DemoData> test(){
 		log.info("接收到参数");
 		// mock data
+		try {
+			Thread.sleep(1000*20);
+		} catch (InterruptedException e) {
+			log.error(e.getMessage(),e);
+		}
 		DemoData demoData = new DemoData();
 		demoData.setId("1");
 		demoData.setName("test");
