@@ -19,6 +19,23 @@ eureka:
   instance:
     preferIpAddress: true
 
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 60000
+
 security:
   oauth2:
     client:
