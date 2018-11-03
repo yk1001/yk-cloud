@@ -57,6 +57,11 @@ public class GracefulShutdownConfig {
 		public void onApplicationEvent(ContextClosedEvent contextClosedEvent) {
 			log.info("接收到停机事件,正在执行停机...");
 			myHealthCheckeIndicator.setUp(false);
+			try {
+				Thread.sleep(1000*30);
+			} catch (InterruptedException e) {
+				log.error(e.getMessage(),e);
+			}
 			this.connector.pause();
 			Executor executor = this.connector.getProtocolHandler().getExecutor();
 			if (executor instanceof ThreadPoolExecutor) {

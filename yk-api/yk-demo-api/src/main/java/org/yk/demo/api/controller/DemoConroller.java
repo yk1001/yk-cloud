@@ -28,7 +28,7 @@ public class DemoConroller {
 		log.info("接收到参数");
 		// mock data
 		try {
-			Thread.sleep(1000*20);
+			Thread.sleep(1000*30);
 		} catch (InterruptedException e) {
 			log.error(e.getMessage(),e);
 		}
