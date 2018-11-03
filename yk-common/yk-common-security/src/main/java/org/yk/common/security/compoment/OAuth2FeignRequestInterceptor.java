@@ -27,10 +27,12 @@ public class OAuth2FeignRequestInterceptor implements RequestInterceptor {
                 return;
             }
         	Authentication  authentication  = SecurityContextHolder.getContext().getAuthentication();
+        	log.debug("authentication = {}",authentication);
         	if(authentication == null){
         		return;
         	}
             OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
+            log.debug("OAuth2AuthenticationDetails = {}",details);
             if(details == null){
         		return;
         	}
