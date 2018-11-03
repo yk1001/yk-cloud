@@ -1,34 +1,51 @@
 server:
   port: 9101
-   
+
 logging:
   path: /yk/logs/yk_cloud/api/
 
-spring:
-  zipkin:
-    base-url: http://192.168.0.105:9005
-  sleuth:
-    sampler:
-      percentage: 1.0
-      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  
 eureka:
   client:
     serviceUrl:
       defaultZone: http://${YK_DISCOVERY_SERVICE_HOST}:${YK_DISCOVERY_SERVICE_PORT}/eureka
     healthcheck:
-      enabled: true
-    instance:
-      preferIpAddress: true
+      enabled: true #使用health端点来代替心跳表明服务是否可用，反应到eureka server ui上服务的UP还是DOWN
+  instance:
+    preferIpAddress: true
+
+feign:
+  httpclient:
+    enabled: true
+
+ribbon:
+  ConnectTimeout: 600000
+  ReadTimeout: 600000
+  eureka:
+    enabled: true
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+          strategy: SEMAPHORE
 
 security:
-  basic:
-    enabled: false
-  ignored: /noauth/**, /swagger**
   oauth2:
     client:
       client-id: yk
       client-secret: secret
-      access-token-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/token
       grant-type: client_credentials
     resource:
       token-info-uri: http://${YK_AUTH_SERVICE_HOST}:${YK_AUTH_SERVICE_PORT}/uaa/oauth/check_token

@@ -5,14 +5,13 @@ spring:
 encrypt:
   failOnError: false
 
---- 
+---
 spring:
-  profiles: test
+  profiles: dev
   application:
-    name: demo-api
+    name: demo-mgmt
   cloud:
     config:
-      uri: http://192.168.0.105:9003/
-      profile: test
+      uri: http://${YK_CONFIG_SERVICE_HOST}:${YK_CONFIG_SERVICE_PORT}
 encrypt:
   failOnError: false
