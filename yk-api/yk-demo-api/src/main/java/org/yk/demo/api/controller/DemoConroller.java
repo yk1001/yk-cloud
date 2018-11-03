@@ -42,7 +42,7 @@ public class DemoConroller {
 		return result;
 	}
 	
-	@RequestMapping(value="/authsec/demoData",method = RequestMethod.POST)
+	@RequestMapping(value="/authsec/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public DemoData test2(@RequestBody DemoData demoData){
 		log.info("接收到参数：{}",JSONObject.toJSONString(demoData));

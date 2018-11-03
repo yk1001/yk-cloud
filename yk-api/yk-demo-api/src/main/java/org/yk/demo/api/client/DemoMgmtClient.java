@@ -12,11 +12,11 @@ import io.swagger.annotations.ApiOperation;
 //@FeignClient(name="demo-mgmt",url="http://127.0.0.1:9101")
 public interface DemoMgmtClient {
 
-	@RequestMapping(value="/noauth/demoData",method = RequestMethod.POST)
+	@RequestMapping(value="/noauth/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public DemoData test(@RequestBody DemoData demoData);
 	
-	@RequestMapping(value="/authsec/demoData",method = RequestMethod.POST)
+	@RequestMapping(value="/authsec/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public DemoData test2(@RequestBody DemoData demoData);
 }

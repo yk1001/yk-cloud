@@ -11,13 +11,13 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class DemoConroller {
 
-	@RequestMapping(value="/noauth/demoData",method = RequestMethod.POST)
+	@RequestMapping(value="/noauth/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public DemoData test(@RequestBody DemoData demoData){
 		return demoData;
 	}
 	
-	@RequestMapping(value="/authsec/demoData",method = RequestMethod.POST)
+	@RequestMapping(value="/authsec/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public DemoData test2(@RequestBody DemoData demoData){
 		return demoData;
