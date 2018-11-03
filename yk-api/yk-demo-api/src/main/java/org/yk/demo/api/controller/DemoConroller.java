@@ -44,9 +44,17 @@ public class DemoConroller {
 	
 	@RequestMapping(value="/authsec/demoData",method = RequestMethod.GET)
 	@ApiOperation(value = "测试接口", notes = "测试接口")
-	public DemoData test2(@RequestBody DemoData demoData){
-		log.info("接收到参数：{}",JSONObject.toJSONString(demoData));
-		return demoMgmtClient.test2(demoData);
+	public GeneralContentResult<DemoData> test2(){
+		log.info("接收到参数");
+		try {
+			return demoMgmtClient.test2();
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+			GeneralContentResult<DemoData> result = new GeneralContentResult<DemoData> ();
+			result.setResultCode(ResultCode.SERVER_UNAVALIABLE);
+			return result;
+		}
+		
 	}
 	
 }
