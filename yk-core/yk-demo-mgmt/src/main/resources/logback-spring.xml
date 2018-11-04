@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property name="log_path" value="/yk/logs/yk_cloud/core/" />
+    <property name="app_name" value="yk-demo-mgmt" />
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_path}/${app_name}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log_path}/${app_name}-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+	<appender name="ERRLOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_path}/${app_name}-err.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>Error</level>
+		</filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log_path}/${app_name}-err-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    
+    <springProfile name="test">
+         <logger name="org.yk">
+            <level value="DEBUG" />
+        </logger>
+    </springProfile>
+
+    <springProfile name="dev">
+        <logger name="org.yk">
+            <level value="DEBUG" />
+        </logger>
+    </springProfile>
+
+    <springProfile name="pro">
+         <logger name="org.yk">
+            <level value="INFO" />
+        </logger>
+    </springProfile>
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="LOGSTASH" />
+        <appender-ref ref="ERRLOGSTASH" />
+    </root>
+    <logger name="org.springframework">
+        <level value="ERROR" />
+    </logger>
+    <logger name="com.sun">
+		<level value="ERROR" />
+	</logger>
+	<logger name="javax.activation">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="net.sf.ehcache">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.hibernate">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.apache">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="net.rubyeye.xmemcached">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.google.code">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.netflix">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.dozer">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="springfox">
+	  <level value="ERROR"/>
+	</logger>
+	
+	<logger name="sun.net.www">
+	  <level value="ERROR"/>
+	</logger>
+	
+</configuration>

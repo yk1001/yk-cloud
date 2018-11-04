@@ -1,9 +1,6 @@
 server:
   port: 9101
 
-logging:
-  path: /yk/logs/yk_cloud/api/
-
 management:
   endpoints:
     web:
