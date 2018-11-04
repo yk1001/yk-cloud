@@ -1,58 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
-    <property name="default_pattern"
-              value="[%X{userLoggerName}] %date{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%logger{30}:%line] - %msg%n" />
-	<property name="log_path"
-              value="/yk/logs/yk_cloud/api/" />
-              
+<!--     <include resource="org/springframework/boot/logging/logback/base.xml" /> -->
+    <property name="default_pattern" value="[%X{userLoggerName}] %date{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%logger{30}:%line] - %msg%n" />
+	<property name="log_path" value="/yk/logs/yk_cloud/api/" />
+    <property name="app_name" value="yk-demo-api" />
+                        
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${default_pattern}</pattern>
         </encoder>
     </appender>
 
-
-    <appender name="LOGSTASH"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log_path}/yk-demo-api.log</file>
+    <appender name="LOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_path}/${app_name}.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${default_pattern}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log_path}/yk-demo-api-%d{yyyy-MM-dd}.log
-            </fileNamePattern>
-            <!-- keep 30 days' worth of history -->
+            <fileNamePattern>${log_path}/${app_name}-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-        </encoder>
     </appender>
 
+	<appender name="ERRLOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_path}/${app_name}-err.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>Error</level>
+		</filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${default_pattern}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log_path}/${app_name}-err-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    
     <springProfile name="test">
          <logger name="org.yk">
             <level value="DEBUG" />
-            <appender-ref ref="LOGSTASH" />
         </logger>
     </springProfile>
 
     <springProfile name="dev">
         <logger name="org.yk">
             <level value="DEBUG" />
-            <appender-ref ref="LOGSTASH" />
         </logger>
     </springProfile>
 
     <springProfile name="pro">
          <logger name="org.yk">
             <level value="INFO" />
-            <appender-ref ref="LOGSTASH" />
         </logger>
     </springProfile>
     <root>
         <level value="INFO" />
-        <!-- <appender-ref ref="STDOUT" /> -->
         <appender-ref ref="LOGSTASH" />
+        <appender-ref ref="ERRLOGSTASH" />
     </root>
     <logger name="org.springframework">
         <level value="ERROR" />

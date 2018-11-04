@@ -26,6 +26,7 @@ public class DemoConroller {
 	@ApiOperation(value = "测试接口", notes = "测试接口")
 	public GeneralContentResult<DemoData> test(){
 		log.info("接收到参数");
+		log.error("error log test");
 		// mock data
 		try {
 			Thread.sleep(1000*30);
