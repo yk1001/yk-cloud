@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-<!--     <include resource="org/springframework/boot/logging/logback/base.xml" /> -->
-    <property name="default_pattern" value="[%X{userLoggerName}] %date{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%logger{30}:%line] - %msg%n" />
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
 	<property name="log_path" value="/yk/logs/yk_cloud/api/" />
     <property name="app_name" value="yk-demo-api" />
-                        
+    
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>${default_pattern}</pattern>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
     <appender name="LOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log_path}/${app_name}.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>${default_pattern}</pattern>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${log_path}/${app_name}-%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -29,7 +28,7 @@
 			<level>Error</level>
 		</filter>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>${default_pattern}</pattern>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${log_path}/${app_name}-err-%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -57,6 +56,7 @@
     </springProfile>
     <root>
         <level value="INFO" />
+        <appender-ref ref="STDOUT" />
         <appender-ref ref="LOGSTASH" />
         <appender-ref ref="ERRLOGSTASH" />
     </root>
