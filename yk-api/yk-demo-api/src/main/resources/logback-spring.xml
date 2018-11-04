@@ -13,12 +13,12 @@
 
     <appender name="LOGSTASH"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_PATH}/yk-demo-api.log/</file>
+        <file>${logging.path}/yk-demo-api.log/</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${default_pattern}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/yk-demo-api-%d{yyyy-MM-dd}.log
+            <fileNamePattern>${logging.path}/yk-demo-api-%d{yyyy-MM-dd}.log
             </fileNamePattern>
             <!-- keep 30 days' worth of history -->
             <maxHistory>30</maxHistory>
