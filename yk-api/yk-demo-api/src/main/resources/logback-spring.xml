@@ -3,7 +3,9 @@
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <property name="default_pattern"
               value="[%X{userLoggerName}] %date{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%logger{30}:%line] - %msg%n" />
-
+	<property name="log_path"
+              value="/yk/logs/yk_cloud/api/" />
+              
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${default_pattern}</pattern>
@@ -13,12 +15,12 @@
 
     <appender name="LOGSTASH"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${logging.path}/yk-demo-api.log/</file>
+        <file>${log_path}/yk-demo-api.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${default_pattern}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logging.path}/yk-demo-api-%d{yyyy-MM-dd}.log
+            <fileNamePattern>${log_path}/yk-demo-api-%d{yyyy-MM-dd}.log
             </fileNamePattern>
             <!-- keep 30 days' worth of history -->
             <maxHistory>30</maxHistory>
