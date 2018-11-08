@@ -1,15 +1,11 @@
 package org.yk.demo.mgmt;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * ClassName: Application <br/>
@@ -18,17 +14,15 @@ import org.springframework.test.context.junit4.SpringRunner;
  * date: Sep 5, 2016 1:50:28 PM <br/>
  *
  * @author yukang
- * @version 
+ * @version
  * @since JDK 1.8
  */
-
-
+@EnableDiscoveryClient(autoRegister=false)
 @SpringBootApplication
-@ComponentScan(excludeFilters = {
-		@Filter(type = FilterType.ANNOTATION, value = SpringBootApplication.class) })
+@ComponentScan(excludeFilters = { @Filter(type = FilterType.ANNOTATION, value = SpringBootApplication.class) })
 public class ApplicationTest {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ApplicationTest.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ApplicationTest.class, args);
+    }
 }

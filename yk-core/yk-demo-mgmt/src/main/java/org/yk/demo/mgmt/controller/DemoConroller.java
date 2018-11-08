@@ -12,16 +12,16 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 public class DemoConroller {
 
-	@RequestMapping(value="/authsec/demoData",method = RequestMethod.GET)
-	@ApiOperation(value = "测试接口", notes = "测试接口")
-	public GeneralContentResult<DemoData> test2(){
-		DemoData demoData = new DemoData();
-		demoData.setId("1");
-		demoData.setName("test");
-		GeneralContentResult<DemoData> result = new GeneralContentResult<DemoData>();
-		result.setResultCode(ResultCode.OPERATE_SUCCESS);
-		result.setDetailDescription("success");
-		result.setResultContent(demoData);
-		return result;
-	}
+    @RequestMapping(value = "/authsec/demoData", method = RequestMethod.GET)
+    @ApiOperation(value = "测试接口", notes = "测试接口")
+    public GeneralContentResult<DemoData> test2() {
+        DemoData demoData = new DemoData();
+        demoData.setId("1");
+        demoData.setName("test");
+        GeneralContentResult<DemoData> result = new GeneralContentResult<DemoData>();
+        result.setResultCode(ResultCode.OPERATE_SUCCESS);
+        result.setDetailDescription("success");
+        result.setResultContent(demoData);
+        return result;
+    }
 }

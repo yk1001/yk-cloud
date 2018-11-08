@@ -16,16 +16,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-	@Bean
-	public Docket swaggerSpringMvcPlugin() {
-		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).genericModelSubstitutes(DeferredResult.class)
-				.useDefaultResponseMessages(false).forCodeGeneration(true).select()
-				.apis(RequestHandlerSelectors.basePackage("org.yk.demo.mgmt.controller")).paths(PathSelectors.any())
-				.build();
-	}
+    @Bean
+    public Docket swaggerSpringMvcPlugin() {
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).genericModelSubstitutes(DeferredResult.class)
+                .useDefaultResponseMessages(false).forCodeGeneration(true).select()
+                .apis(RequestHandlerSelectors.basePackage("org.yk.demo.mgmt.controller")).paths(PathSelectors.any())
+                .build();
+    }
 
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Demo mgmt").description("yk-cloud Platform  API")
-				.contact(new Contact("YK", "http://www.google.com", "yk163001@126.com")).version("0.1").build();
-	}
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("Demo mgmt").description("yk-cloud Platform  API")
+                .contact(new Contact("YK", "http://www.google.com", "yk163001@126.com")).version("0.1").build();
+    }
 }

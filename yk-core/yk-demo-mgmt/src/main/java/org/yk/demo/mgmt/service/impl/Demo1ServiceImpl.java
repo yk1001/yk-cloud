@@ -12,14 +12,14 @@ import lombok.extern.slf4j.XSlf4j;
 @Slf4j
 public class Demo1ServiceImpl implements Demo1Service {
 
-	@Autowired
-	private Demo2Service demo2Service;
-	
-	@Override
-	public String method1() {
-		log.info(demo2Service.method1());
-		log.info(demo2Service.method2());
-		return "success";
-	}
+    @Autowired
+    private Demo2Service demo2Service;
+
+    @Override
+    public String method1() {
+        log.info(demo2Service.method1());
+        log.info(demo2Service.method2());
+        return "success";
+    }
 
 }

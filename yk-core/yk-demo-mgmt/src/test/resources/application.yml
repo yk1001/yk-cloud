@@ -2,3 +2,11 @@ server:
   port: 9201
 logging:
   path: /yk/logs/gemii_micro/api/
+
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: yukang
+    timeout: 20000
