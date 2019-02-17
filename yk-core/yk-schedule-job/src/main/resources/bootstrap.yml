@@ -1,0 +1,18 @@
+spring:
+  profiles: default
+  application:
+    name: schedule-job
+encrypt:
+  failOnError: false
+
+--- 
+spring:
+  profiles: test
+  application:
+    name: data-mgmt
+  cloud:
+    config:
+      uri: http://192.168.0.105:9003/
+      profile: test
+encrypt:
+  failOnError: false

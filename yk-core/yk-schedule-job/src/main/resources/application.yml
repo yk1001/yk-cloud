@@ -1,0 +1,11 @@
+server:
+  port: 9103
+   
+logging:
+  path: /yk/logs/yk_cloud/api/
+
+security:
+  basic:
+    enabled: false
+  ignored: /noauth/**, /swagger**
+

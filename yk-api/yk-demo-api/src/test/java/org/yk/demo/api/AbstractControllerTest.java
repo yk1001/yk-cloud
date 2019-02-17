@@ -1,7 +1,7 @@
 /**
  * Project Name:liz-groupadmin-api
  * File Name:AbstractControllerTest.java
- * Package Name:com.gemii.lizcloud.api.group.admin
+ * Package Name:com.yk.lizcloud.api.group.admin
  * Date:2017年6月1日上午9:44:45
  * Copyright (c) 2017, yukang All Rights Reserved.
  *

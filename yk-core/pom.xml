@@ -15,6 +15,7 @@
 	<modules>
 		<module>yk-demo-mgmt</module>
 		<module>yk-data-mgmt</module>
+		<module>yk-schedule-job</module>
 	</modules>
 
 	<dependencies>
