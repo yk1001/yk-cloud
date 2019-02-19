@@ -4,6 +4,15 @@ logging:
   path: /yk/logs/yk_micro/api/
   
 spring:
+  jpa:
+    show-sql: true
+    database: MYSQL
+    hibernate:
+      ddl-auto: none
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
     url: jdbc:mysql://localhost:3306/yk_schedule_job?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
@@ -22,7 +31,7 @@ spring:
           jobStore:
             class: org.quartz.impl.jdbcjobstore.JobStoreTX
             driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            tablePrefix: SJ_
+            tablePrefix: sj_
             isClustered: true
             clusterCheckinInterval: 10000
             useProperties: false
