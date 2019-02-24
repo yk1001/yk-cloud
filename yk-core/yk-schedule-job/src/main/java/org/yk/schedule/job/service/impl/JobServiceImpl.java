@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yk.common.data.schedulejob.CronHttpJobCreateReq;
 import org.yk.common.data.schedulejob.CronHttpJobCreateResp;
+import org.yk.common.data.schedulejob.CronServiceJobCreateReq;
+import org.yk.common.data.schedulejob.CronServiceJobCreateResp;
 import org.yk.common.data.schedulejob.JobCancleReq;
 import org.yk.schedule.job.component.job.HttpJob;
 import org.yk.schedule.job.service.JobService;
@@ -34,7 +36,6 @@ public class JobServiceImpl implements JobService{
 		jobDataMap.put(HttpJob.JOBDATA_URL,cronHttpJobCreateReq.getUrl());
 		jobDataMap.put(HttpJob.JOBDATA_METHOD,cronHttpJobCreateReq.getMethod());
 		jobDataMap.put(HttpJob.JOBDATA_CONTENT,cronHttpJobCreateReq.getContent());
-		jobDataMap.put(HttpJob.JOBDATA_CONTENTTYPE,cronHttpJobCreateReq.getContentType());
 		JobDetail jobDetail = JobBuilder.newJob(HttpJob.class).usingJobData(jobDataMap)
 				.withIdentity(cronHttpJobCreateReq.getName(), cronHttpJobCreateReq.getGroup()).build();
 		CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule(cronHttpJobCreateReq.getCronExpression()); 
@@ -48,6 +49,13 @@ public class JobServiceImpl implements JobService{
 		return cronHttpJobCreateResp;
 	}
 
+	@Override
+	public CronServiceJobCreateResp createCronServiceJob(CronServiceJobCreateReq cronServiceJobCreateReq)
+			throws SchedulerException {
+		// TODO 待扩展
+		return null;
+	}
+	
 	@Override
 	public boolean cancelJob(JobCancleReq jobCancleReq) throws SchedulerException {
 		JobKey key = new JobKey(jobCancleReq.getName(), jobCancleReq.getGroup());
