@@ -1,4 +1,0 @@
-server:
-  port: 9202
-logging:
-  path: /yk/logs/yk_micro/api/
