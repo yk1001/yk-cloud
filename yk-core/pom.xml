@@ -12,11 +12,7 @@
 
 	<groupId>com.yk.cloud</groupId>
 	<version>0.0.1-SNAPSHOT</version>
-	<modules>
-		<module>yk-demo-mgmt</module>
-		<module>yk-search-es</module>
-		<module>yk-schedule-job</module>
-	</modules>
+
 
 	<dependencies>
 		<dependency>

@@ -15,8 +15,4 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<modules>
-		<module>yk-common-utils</module>
-		<module>yk-common-security</module>
-	</modules>
 </project>

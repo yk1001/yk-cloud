@@ -13,11 +13,5 @@
   <url>http://maven.apache.org</url>
  
   <packaging>pom</packaging>
-  <modules>
-    <module>yk-discovery</module>
-    <module>yk-edge</module>
-    <module>yk-config</module>
-    <module>yk-auth</module>
-    <module>yk-sleuth</module>
-  </modules>
+
 </project>

@@ -14,9 +14,6 @@
 	<url>http://maven.apache.org</url>
 
 	<packaging>pom</packaging>
-	<modules>
-		<module>yk-demo-api</module>
-	</modules>
 
 	<dependencies>
 		<dependency>
