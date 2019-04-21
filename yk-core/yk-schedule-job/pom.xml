@@ -7,9 +7,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-scheduler</artifactId>
+	<artifactId>yk-scheduler-quartz</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Archetype - yk-schedule-job</name>
+	<name>Archetype - yk-schedule-quartz</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
