@@ -1,5 +1,5 @@
 spring:
   application:
-    name: auth
+    name: auth-oauth2
 encrypt:
   failOnError: false

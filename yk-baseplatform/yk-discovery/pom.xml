@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-discovery</artifactId>
+	<artifactId>yk-discovery-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>yk-discovery</name>
 	<url>http://maven.apache.org</url>

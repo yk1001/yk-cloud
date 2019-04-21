@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-edge</artifactId>
+	<artifactId>yk-edge-zuul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>yk-edge</name>
 	<url>http://maven.apache.org</url>

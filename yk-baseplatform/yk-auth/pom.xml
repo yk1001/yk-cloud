@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-auth</artifactId>
+	<artifactId>yk-auth-oauth2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>yk-auth</name>
 	<url>http://maven.apache.org</url>

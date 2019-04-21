@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.yk.cloud</groupId>
-	<artifactId>yk-sleuth</artifactId>
+	<artifactId>yk-sleuth-zipkin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>yk-sleuth</name>
 	<url>http://maven.apache.org</url>

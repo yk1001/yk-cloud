@@ -1,6 +1,6 @@
 spring:
   application:
-    name: edge
+    name: edge-zuul
 encrypt:
   failOnError: false
   
@@ -8,7 +8,7 @@ encrypt:
 spring:
   profiles: dev
   application:
-    name: edge
+    name: edge-zuul
   cloud:
     config:
       uri: http://${YK_CONFIG_SERVICE_HOST}:${YK_CONFIG_SERVICE_PORT}

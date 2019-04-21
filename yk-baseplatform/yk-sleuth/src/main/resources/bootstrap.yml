@@ -1,6 +1,6 @@
 spring:
   profiles: default
   application:
-    name: sleuth
+    name: sleuth-zipkin
 encrypt:
   failOnError: false

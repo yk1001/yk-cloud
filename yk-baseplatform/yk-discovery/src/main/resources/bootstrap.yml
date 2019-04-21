@@ -1,5 +1,5 @@
 spring:
   application:
-    name: discovery
+    name: discovery-eureka
 encrypt:
   failOnError: false
