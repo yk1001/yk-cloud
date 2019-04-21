@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: auth-oauth2
-encrypt:
-  failOnError: false
