@@ -1,0 +1,10 @@
+server:
+  port: 9204
+
+logging:
+  path: /yk/logs/yk_micro/api/
+
+security:
+  basic:
+    enabled: false
+  ignored: /noauth/**, /swagger**
