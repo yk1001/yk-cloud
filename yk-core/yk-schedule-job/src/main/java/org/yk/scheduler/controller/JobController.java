@@ -1,4 +1,4 @@
-package org.yk.schedule.job.controller;
+package org.yk.scheduler.controller;
 
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.yk.common.data.GeneralResult;
 import org.yk.common.data.schedulejob.CronHttpJobCreateReq;
 import org.yk.common.data.schedulejob.CronHttpJobCreateResp;
 import org.yk.common.data.schedulejob.JobCancleReq;
-import org.yk.schedule.job.service.JobService;
+import org.yk.scheduler.service.JobService;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

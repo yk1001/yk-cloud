@@ -2,7 +2,7 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
 	<property name="log_path" value="/yk/logs/yk_cloud/core/" />
-    <property name="app_name" value="yk-schedule-job" />
+    <property name="app_name" value="yk-scheduler" />
     
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">

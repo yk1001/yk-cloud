@@ -1,4 +1,4 @@
-package org.yk.schedule.job.config;
+package org.yk.scheduler.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;

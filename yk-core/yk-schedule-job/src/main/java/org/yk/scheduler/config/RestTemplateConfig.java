@@ -1,4 +1,4 @@
-package org.yk.schedule.job.config;
+package org.yk.scheduler.config;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

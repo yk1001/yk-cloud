@@ -1,4 +1,4 @@
-package org.yk.schedule.job.config;
+package org.yk.scheduler.config;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ControllerLogAspect {
 	
-    @Pointcut("execution(public * org.yk.schedule.job.controller.*.*(..))")
+    @Pointcut("execution(public * org.yk.scheduler.controller.*.*(..))")
     public void log() {}
  
     /*@Before注解表示在具体的方法之前执行*/

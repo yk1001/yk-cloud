@@ -1,7 +1,7 @@
 spring:
   profiles: default
   application:
-    name: schedule-job
+    name: scheduler
 encrypt:
   failOnError: false
 
@@ -9,7 +9,7 @@ encrypt:
 spring:
   profiles: test
   application:
-    name: data-mgmt
+    name: scheduler
   cloud:
     config:
       uri: http://192.168.0.105:9003/

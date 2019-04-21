@@ -1,7 +1,7 @@
-package org.yk.schedule.job.service;
+package org.yk.scheduler.service;
 
 import org.junit.Test;
-import org.yk.schedule.job.AbstractTest;
+import org.yk.scheduler.AbstractTest;
 
 public class AppTest extends AbstractTest{
 

@@ -1,4 +1,4 @@
-package org.yk.schedule.job.config;
+package org.yk.scheduler.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	public Docket swaggerSpringMvcPlugin() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).genericModelSubstitutes(DeferredResult.class)
 				.useDefaultResponseMessages(false).forCodeGeneration(true).select()
-				.apis(RequestHandlerSelectors.basePackage("org.yk.schedule.job.controller")).paths(PathSelectors.any())
+				.apis(RequestHandlerSelectors.basePackage("org.yk.scheduler.controller")).paths(PathSelectors.any())
 				.build();
 	}
 

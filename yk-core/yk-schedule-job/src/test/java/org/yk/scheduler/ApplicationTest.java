@@ -1,4 +1,4 @@
-package org.yk.schedule.job;
+package org.yk.scheduler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

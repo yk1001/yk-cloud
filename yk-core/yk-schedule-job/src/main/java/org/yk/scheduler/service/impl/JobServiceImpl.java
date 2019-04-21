@@ -1,4 +1,4 @@
-package org.yk.schedule.job.service.impl;
+package org.yk.scheduler.service.impl;
 
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;
@@ -16,8 +16,8 @@ import org.yk.common.data.schedulejob.CronHttpJobCreateResp;
 import org.yk.common.data.schedulejob.CronServiceJobCreateReq;
 import org.yk.common.data.schedulejob.CronServiceJobCreateResp;
 import org.yk.common.data.schedulejob.JobCancleReq;
-import org.yk.schedule.job.component.job.HttpJob;
-import org.yk.schedule.job.service.JobService;
+import org.yk.scheduler.component.job.HttpJob;
+import org.yk.scheduler.service.JobService;
 
 import lombok.extern.slf4j.Slf4j;
 

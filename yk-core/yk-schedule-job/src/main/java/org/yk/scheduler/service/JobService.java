@@ -1,4 +1,4 @@
-package org.yk.schedule.job.service;
+package org.yk.scheduler.service;
 
 import org.quartz.SchedulerException;
 import org.yk.common.data.schedulejob.CronHttpJobCreateReq;

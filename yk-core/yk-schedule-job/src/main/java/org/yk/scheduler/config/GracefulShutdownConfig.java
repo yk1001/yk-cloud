@@ -1,4 +1,4 @@
-package org.yk.schedule.job.config;
+package org.yk.scheduler.config;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;

@@ -1,4 +1,4 @@
-package org.yk.schedule.job.component.job;
+package org.yk.scheduler.component.job;
 
 import org.quartz.Job;
 import org.quartz.JobDataMap;
