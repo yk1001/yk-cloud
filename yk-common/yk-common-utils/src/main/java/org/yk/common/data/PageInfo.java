@@ -6,6 +6,9 @@ import java.io.Serializable;
 
 import lombok.Data;
 
+/**
+ * 分页信息
+ * */
 @Data
 public class PageInfo implements Serializable {
 

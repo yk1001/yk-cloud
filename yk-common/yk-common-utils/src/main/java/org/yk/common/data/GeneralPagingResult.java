@@ -1,22 +1,18 @@
 package org.yk.common.data;
 
-import java.io.Serializable;
-
 import lombok.Data;
 
+/**
+ * 带有分页数据的通用返回
+ * */
 @Data
-public class GeneralPagingResult<T> implements Serializable {
+public class GeneralPagingResult<T> extends  GeneralContentResult<T> {
 
 	/**
-	 * serialVersionUID:TODO Description.
-	 */
-	private static final long serialVersionUID = 1540315626080625718L;
-
-	private String resultCode;
-	private String detailDescription;
-	private T resultContent;
-	
-	/**
+     * 
+     */
+    private static final long serialVersionUID = 5861439543969778397L;
+    /**
 	 * pageInfo: For paging result ONLY.
 	 */
 	private PageInfo pageInfo;
