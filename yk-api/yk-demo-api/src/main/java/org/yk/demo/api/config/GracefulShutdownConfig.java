@@ -17,6 +17,12 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 优雅停机配置
+ * shutdown 请求后，会立即更新该服务在注册中心状态为不可用，使得其他服务在服务发现时，该服务不可用
+ * 然后等待30秒后，设置web容器不再接收请求，
+ * 最后，当所有线程回收到线程池后，服务停止
+ * */
 @Component
 @Slf4j
 public class GracefulShutdownConfig {
