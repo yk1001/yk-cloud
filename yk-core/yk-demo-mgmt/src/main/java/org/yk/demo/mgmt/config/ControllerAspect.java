@@ -33,9 +33,8 @@ public class ControllerAspect {
     }
 
     /**
-     * 打印输入输出及处理时间过长的日志
-     * 针对异常的统一处理
-     * */
+     * 打印输入输出及处理时间过长的日志 针对异常的统一处理
+     */
     @Around("controller()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         Object[] args = pjp.getArgs();
@@ -43,13 +42,13 @@ public class ControllerAspect {
         String methodName = pjp.getSignature().getName();
         log.info("class:{},methodName:{},args:{}", className, methodName, args);
         Long startTimeMillis = System.currentTimeMillis();
-        Object resp =  null;
+        Object resp = null;
         try {
             resp = pjp.proceed();
         } catch (Exception e) {
             MethodSignature ms = (MethodSignature) pjp.getSignature();
             Class returnType = ms.getMethod().getReturnType();
-            resp = handleException(returnType,e) ;
+            resp = handleException(returnType, e);
         }
         Long endTimeMillis = System.currentTimeMillis();
         Long spend = endTimeMillis - startTimeMillis;
@@ -62,26 +61,25 @@ public class ControllerAspect {
 
     /**
      * 统一的异常处理
-     * */
-    private GeneralResult handleException(Class returnType,Exception e) throws Throwable{
+     */
+    private GeneralResult handleException(Class returnType, Exception e) throws Throwable {
         GeneralResult errorResult = null;
-        if(returnType.equals(GeneralContentResult.class)
-                || returnType.equals(GeneralPagingResult.class)){
+        if (returnType.equals(GeneralContentResult.class) || returnType.equals(GeneralPagingResult.class)) {
             errorResult = new GeneralContentResult();
-        } else if(returnType.equals(GeneralResult.class)){
+        } else if (returnType.equals(GeneralResult.class)) {
             errorResult = new GeneralResult();
         } else {
             throw e;
         }
-        if(e instanceof GeneralException){
+        if (e instanceof GeneralException) {
             errorResult.setResultCode(((GeneralException) e).getErrorCode());
             errorResult.setDetailDescription(((GeneralException) e).getDetailDescription());
         }
-        if(e instanceof GeneralContentException && errorResult instanceof GeneralContentResult){
-            ((GeneralContentResult)errorResult).setResultContent(((GeneralContentException) e).getResultContent());
+        if (e instanceof GeneralContentException && errorResult instanceof GeneralContentResult) {
+            ((GeneralContentResult) errorResult).setResultContent(((GeneralContentException) e).getResultContent());
         }
-        if(StringUtils.isBlank(errorResult.getResultCode())){
-            log.error(e.getMessage(),e);
+        if (StringUtils.isBlank(errorResult.getResultCode())) {
+            log.error(e.getMessage(), e);
             errorResult.setResultCode(ResultCode.SERVER_UNAVALIABLE);
             errorResult.setDetailDescription(e.getMessage());
         }
