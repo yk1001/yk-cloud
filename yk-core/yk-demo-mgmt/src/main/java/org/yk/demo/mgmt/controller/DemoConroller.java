@@ -18,10 +18,6 @@ public class DemoConroller {
         DemoData demoData = new DemoData();
         demoData.setId("1");
         demoData.setName("test");
-        GeneralContentResult<DemoData> result = new GeneralContentResult<DemoData>();
-        result.setResultCode(ResultCode.OPERATE_SUCCESS);
-        result.setDetailDescription("success");
-        result.setResultContent(demoData);
-        return result;
+        return new GeneralContentResult<DemoData>(ResultCode.OPERATE_SUCCESS,demoData);
     }
 }
